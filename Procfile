@@ -1,1 +1,1 @@
-worker: python voting/procampo_v2.py
+web: python voting/procampo_v2.py
