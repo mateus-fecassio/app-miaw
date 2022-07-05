@@ -1,0 +1,1 @@
+worker: python voting/procampo_v2.py
