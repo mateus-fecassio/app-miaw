@@ -52,10 +52,11 @@ def votation(driver, link, person_xpath, vote_counter):
         time.sleep(11) # x seconds
         conf_button = driver.find_element(by=By.XPATH, value='/html/body/div[4]/div/div/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div[2]/div/div[3]/div/div')
         conf_button.click()
+        gc.collect()
     
     # print("Done!")
 
-def main(th):
+def main(th=0):
     print(f'Thread {th} -- OK')
 
     time.sleep(10)
@@ -89,4 +90,4 @@ def main(th):
 if __name__ == "__main__":
     for th in range(3):
         threading.Thread(target=main, args=([th])).start()
-    
+    # main()
