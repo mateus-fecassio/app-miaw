@@ -33,10 +33,10 @@ def init_driver():
 
 def votation(driver, link, person_xpath, vote_counter):
 	# vote_count = random.randint(10,30)
-	vote_count = 10
+	vote_count = 20
 	
 	driver.get(link)
-	time.sleep(12) # x seconds
+	time.sleep(10) # x seconds
 	for _ in range(vote_count):
 		# time.sleep(2) # x seconds
 		
