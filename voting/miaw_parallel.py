@@ -88,6 +88,6 @@ def main(th=0):
 
 
 if __name__ == "__main__":
-    for th in range(3):
+    for th in range(2):
         threading.Thread(target=main, args=([th])).start()
     # main()
