@@ -1,1 +1,1 @@
-web: python voting/miaw.py
+worker: python voting/miaw.py
