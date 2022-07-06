@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 # from webdriver_manager.chrome import ChromeDriverManager
 import time
+import os
 
 
 # def init_driver(silent=False): #silent abre sem interface visual
@@ -32,7 +33,7 @@ def init_driver():
 
 def votation(driver, link, person_xpath, vote_counter):
 	# vote_count = random.randint(10,30)
-	vote_count = 2
+	vote_count = 10
 	
 	driver.get(link)
 	time.sleep(12) # x seconds
