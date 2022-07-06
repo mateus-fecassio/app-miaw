@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 import os
+import gc
 import threading
 
 
@@ -34,31 +35,30 @@ def init_driver():
 
 
 def votation(driver, link, person_xpath, vote_counter):
-	# vote_count = random.randint(10,30)
-	vote_count = 20
-	
-	driver.get(link)
-	time.sleep(12) # x seconds
-	for _ in range(vote_count):
-		# time.sleep(2) # x seconds
-		
-		for _ in range(10):
-			try:
-				send_button = driver.find_element(by=By.XPATH, value=person_xpath)
-				send_button.click()
-				vote_counter[0] += 1
-			except:
-				pass
-			time.sleep(0.1) # x seconds
-		
-		time.sleep(11) # x seconds
-		conf_button = driver.find_element(by=By.XPATH, value='/html/body/div[4]/div/div/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div[2]/div/div[3]/div/div')
-		conf_button.click()
-	
-	# print("Done!")
+    vote_count = 20
+    
+    driver.get(link)
+    time.sleep(12) # x seconds
+    for _ in range(vote_count):	
+        for _ in range(10):
+            try:
+                send_button = driver.find_element(by=By.XPATH, value=person_xpath)
+                send_button.click()
+                vote_counter[0] += 1
+            except:
+                pass
+            time.sleep(0.1) # x seconds
+        
+        time.sleep(11) # x seconds
+        conf_button = driver.find_element(by=By.XPATH, value='/html/body/div[4]/div/div/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div[2]/div/div[3]/div/div')
+        conf_button.click()
+    
+    # print("Done!")
 
 def main(th):
     print(f'Thread {th} -- OK')
+
+    time.sleep(10)
     vote_counter = [0]
 
     link = 'https://miaw.mtv.com.br/vote/streamer-br'
@@ -87,6 +87,6 @@ def main(th):
 
 
 if __name__ == "__main__":
-    for th in range(4):
+    for th in range(3):
         threading.Thread(target=main, args=([th])).start()
     
