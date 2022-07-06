@@ -1,7 +1,7 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
+# from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
+# from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 
@@ -32,7 +32,7 @@ def init_driver():
 
 def votation(driver, link, person_xpath, vote_counter):
 	# vote_count = random.randint(10,30)
-	vote_count = 1
+	vote_count = 2
 	
 	driver.get(link)
 	time.sleep(12) # x seconds
