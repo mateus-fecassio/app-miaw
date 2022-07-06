@@ -63,7 +63,7 @@ if __name__ == "__main__":
     link = 'https://miaw.mtv.com.br/vote/streamer-br'
     person_xpath = '/html/body/div[4]/div/div/div[2]/div[3]/div/div/div/div/div/div[2]/div[2]/div[1]/div[1]/div/div[2]/div[1]/div[33]/div/div/div[3]/div/div[5]/div/button' # samira
 
-    driver = init_driver(silent=QUIET)
+    driver = init_driver()
     while True:
         try:
             votation(driver, link, person_xpath, vote_counter)
@@ -76,7 +76,7 @@ if __name__ == "__main__":
 
             time.sleep(60) # x seconds
             driver.quit()
-            driver = init_driver(silent=QUIET)
+            driver = init_driver()
             # driver.refresh()
 
         try:
