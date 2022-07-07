@@ -1,1 +1,1 @@
-worker: python voting/miaw_parallel.py
+worker: python voting/miaw.py

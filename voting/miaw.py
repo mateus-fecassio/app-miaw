@@ -69,10 +69,10 @@ if __name__ == "__main__":
         try:
             votation(driver, link, person_xpath, vote_counter)
 
-            text = f'NOTE: {vote_counter[0]} votes submitted so far.\n'
+            text = f'NOTE: {vote_counter[0]} votes submitted so far.'
             print(text)
         except:
-            text = f'ERROR: Quiting and restarting driver... The last vote_counter was {vote_counter[0]}\n'
+            text = f'ERROR: Quiting and restarting driver... The last vote_counter was {vote_counter[0]}.'
             print(text)
 
             time.sleep(60) # x seconds
